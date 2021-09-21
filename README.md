@@ -28,3 +28,9 @@ Obs2. In order to perform test inference download our two-views model from [here
 
 ### Acknowlegments
 Parts of EfficientNet from https://github.com/lukemelas/EfficientNet-PyTorch/ is included here and slightly modified, based in version 0.7.0.
+
+### Dependencies
+argparse
+numpy
+torch
+cv2
