@@ -1,5 +1,5 @@
 # two-views-classifier
-Two Views breast cancer classifier.
+Two Views breast cancer classifier. This is inference code for the classifier based in EfficientNets and classifying the two views of mammograms at once. It was trained in CBIS-DDSM dataset with original test split. It means that any pair of mammograms in test set can be used in this inference.
 
 ## Instructions for inference with two views
 
@@ -22,3 +22,9 @@ optional arguments:
   Example:
 ```
   python3 2views_clf_test.py -c samples/Calc-Test_P_00127_RIGHT_CC.png -m samples/Calc-Test_P_00127_RIGHT_MLO.png
+```
+Obs. Some sample files from CBIS-DDSM test set are included in samples folder for evaluation. Files were resized for network input.
+Obs2. In order to perform test inference download our two-views model from [here](https://drive.google.com/file/d/1mOicNn1lCtXxXb2ficPmWFOnR4HM5c5M/view?usp=sharing) and place it in "models_side_mid_clf_efficientnet-b0" folder.
+
+### Acknowlegments
+Parts of EfficientNet from https://github.com/lukemelas/EfficientNet-PyTorch/ is included here and slightly modified, based in version 0.7.0.
