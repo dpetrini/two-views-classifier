@@ -24,6 +24,7 @@ optional arguments:
   python3 2views_clf_test.py -c samples/Calc-Test_P_00127_RIGHT_CC.png -m samples/Calc-Test_P_00127_RIGHT_MLO.png
 ```
 Obs. Some sample files from CBIS-DDSM test set are included in samples folder for evaluation. Files were resized for network input.
+
 Obs2. In order to perform test inference download our two-views model from [here](https://drive.google.com/file/d/1mOicNn1lCtXxXb2ficPmWFOnR4HM5c5M/view?usp=sharing) and place it in "models_side_mid_clf_efficientnet-b0" folder.
 
 ### Acknowlegments
