@@ -1,4 +1,4 @@
-# Side Classifier: 2 views classifier using Sinai Patch Clf for CC, MLO
+# Side Classifier: 2 views classifier using Patch Clf for CC, MLO
 
 import sys
 import collections
@@ -88,10 +88,10 @@ class SideMIDBreastModel(nn.Module):
                 
                 if 'b0' in network:
                     inplanes = 2560
-                    output_channels=inplanes #1280
+                    output_channels=inplanes
                 elif 'b4' in network:
-                    inplanes = 3584 #1792
-                    output_channels=inplanes #1792 #2048
+                    inplanes = 3584
+                    output_channels=inplanes
 
                 self.w_h = 36*28                 # width and height of last layer output
 
@@ -101,18 +101,18 @@ class SideMIDBreastModel(nn.Module):
                     'input_filters', 'output_filters', 'se_ratio', 'id_skip'])
 
                 new_block = BlockArgs(num_repeat=1, kernel_size=3, stride=[strides], expand_ratio=2,
-                                    input_filters=inplanes, output_filters=output_channels, se_ratio=0.25, id_skip=True) # para 1 block
+                                    input_filters=inplanes, output_filters=output_channels, se_ratio=0.25, id_skip=True)
 
                 # below line for same params for blocks as main net
                 block_args, global_params, image_size = new_block, feat_ext._global_params, [15, 15]
 
                 if n_blocks == 1:
-                    self.block1 = MBConvBlock(block_args, global_params, image_size=image_size) # comentar para FC-only
+                    self.block1 = MBConvBlock(block_args, global_params, image_size=image_size)
                 elif n_blocks == 2:
-                    self.block1 = MBConvBlock(block_args, global_params, image_size=image_size) # comentar para FC-only
+                    self.block1 = MBConvBlock(block_args, global_params, image_size=image_size)
                     new_block = BlockArgs(num_repeat=1, kernel_size=3, stride=[strides], expand_ratio=2,
-                                    input_filters=output_channels, output_filters=output_channels, se_ratio=0.25, id_skip=True) # para 1 block
-                    self.block2 = MBConvBlock(new_block, global_params, image_size=image_size) # comentar para FC-Only, 1-block
+                                    input_filters=output_channels, output_filters=output_channels, se_ratio=0.25, id_skip=True)
+                    self.block2 = MBConvBlock(new_block, global_params, image_size=image_size)
 
         if self.avg_pool:
             self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
@@ -120,8 +120,8 @@ class SideMIDBreastModel(nn.Module):
 
         else:
             # AVGPOOL
-            self.fc_pre = nn.Linear(2048* self.w_h, 1024)  #para aproveitar features espaciais Resnet 9*7 / EficientNet 36*28
-            self.fc = nn.Linear(1024, 2)     # INCLUINDO - 2020-10-14 - para aproveitar features espaciais
+            self.fc_pre = nn.Linear(2048* self.w_h, 1024)  # for spatial features - Resnet 9*7 / EficientNet 36*28
+            self.fc = nn.Linear(1024, 2)
 
 
     def forward(self, x):
@@ -138,7 +138,7 @@ class SideMIDBreastModel(nn.Module):
             x = torch.flatten(x, 1)         # out: torch.Size([1, 2048])
         else:
             # NO AVGPOOL
-            x = x.view(-1, 2048* self.w_h)  # para aproveitar features espaciais  Resnet 9* 7 / Efiencet 36*28
+            x = x.view(-1, 2048* self.w_h)
             x = self.fc_pre(x)
 
         x = self.fc(x)                  # out: torch.Size([1, 2]
