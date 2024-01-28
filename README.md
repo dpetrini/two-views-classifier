@@ -35,3 +35,22 @@ argparse
 numpy
 torch
 cv2
+
+### If you use this code and would like to know or cite main [work](https://ieeexplore.ieee.org/document/9837037):
+
+```
+@ARTICLE{
+9837037,
+  author={Petrini, Daniel G. P. and Shimizu, Carlos and Roela, Rosimeire A. and Valente, Gabriel Vansuita and Folgueira, Maria Aparecida Azevedo Koike and Kim, Hae Yong},
+  journal={IEEE Access}, 
+  title={Breast Cancer Diagnosis in Two-View Mammography Using End-to-End Trained EfficientNet-Based Convolutional Network}, 
+  year={2022},
+  volume={10},
+  number={},
+  pages={77723-77731},
+  keywords={Mammography;Convolutional neural networks;Training;Transfer learning;Breast cancer;Artificial intelligence;Lesions;Breast cancer diagnosis;deep learning;convolutional neural network;mammogram;transfer learning},
+  doi={10.1109/ACCESS.2022.3193250}
+}
+
+
+```
