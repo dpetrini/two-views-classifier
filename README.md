@@ -32,11 +32,16 @@ Parts of EfficientNet from https://github.com/lukemelas/EfficientNet-PyTorch/ is
 
 ### Dependencies
 argparse
+
 numpy
+
 torch
+
 cv2
 
-### If you use this code and would like to know or cite main [work](https://ieeexplore.ieee.org/document/9837037):
+
+### Reference
+If you use want to know more, please check complete text [here](https://ieeexplore.ieee.org/document/9837037). If you want to cite this work please use reference below.
 
 ```
 @ARTICLE{
