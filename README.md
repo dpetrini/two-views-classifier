@@ -1,6 +1,13 @@
 # two-views-classifier
 Two Views breast cancer classifier. Two view classifier for breast cancer. This is the inference code of the EfficientNet-based classifier to classify the two mammography views at once. It was trained in CBIS-DDSM dataset with original test split. It means that any pair of mammograms in test set can be used in this inference.
 
+
+### Update [year 2025]
+
+Added some code related to dataset preparation:
+
+[https://github.com/dpetrini/prepare_datasets/](https://github.com/dpetrini/prepare_datasets/)
+
 ## Instructions for inference with two views
 
 python3 2views_clf_test.py -h
