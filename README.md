@@ -16,6 +16,10 @@ Added some code related to dataset preparation:
 
 [https://github.com/dpetrini/prepare_datasets/](https://github.com/dpetrini/prepare_datasets/)
 
+Also, check the library we use for training the models:
+
+[https://github.com/dpetrini/nova](https://github.com/dpetrini/nova)
+
 ## Instructions for inference with two views
 
 python3 2views_clf_test.py -h
