@@ -12,13 +12,9 @@ https://github.com/dpetrini/multiple-view
 
 ### Update [year 2025]
 
-Added some code related to dataset preparation:
+Added some code related to dataset preparation: [https://github.com/dpetrini/prepare_datasets/](https://github.com/dpetrini/prepare_datasets/)
 
-[https://github.com/dpetrini/prepare_datasets/](https://github.com/dpetrini/prepare_datasets/)
-
-Also, check the library we use for training the models:
-
-[https://github.com/dpetrini/nova](https://github.com/dpetrini/nova)
+Also, check the library we use for training the models: [https://github.com/dpetrini/nova](https://github.com/dpetrini/nova)
 
 ## Instructions for inference with two views
 
